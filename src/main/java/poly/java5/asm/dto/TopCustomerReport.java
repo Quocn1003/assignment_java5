@@ -1,5 +1,10 @@
 package poly.java5.asm.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class TopCustomerReport {
 
     private String username;
@@ -10,20 +15,4 @@ public class TopCustomerReport {
         this.totalAmount = totalAmount;
     }
 
-    // Getters và Setters (hoặc dùng Lombok nếu muốn)
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Double getTotalAmount() {
-        return totalAmount;
-    }
-
-    public void setTotalAmount(Double totalAmount) {
-        this.totalAmount = totalAmount;
-    }
 }

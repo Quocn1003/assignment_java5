@@ -18,22 +18,22 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
-    Category findByName(String name) {
+    public Category findByName(String name) {
         return categoryRepository.findByName(name);
     }
 
-    Category findById(Long id) {
+    public Category findById(Long id) {
         return categoryRepository.findById(id).orElse(null);
     }
 
-    void updateById(Long id, Category category) {
+    public void updateById(Long id, Category category) {
         if (categoryRepository.existsById(id)) {
             category.setId(id);
             categoryRepository.save(category);
         }
     }
 
-    void updateByName(String name, Category category) {
+    public void updateByName(String name, Category category) {
         Category existingCategory = categoryRepository.findByName(name);
         if (existingCategory != null) {
             category.setId(existingCategory.getId());
@@ -41,15 +41,15 @@ public class CategoryService {
         }
     }
 
-    void deleteById(Long id) {
+    public void deleteById(Long id) {
         categoryRepository.deleteById(id);
     }
 
-    void deleteByName(String name) {
+    public void deleteByName(String name) {
         categoryRepository.deleteByName(name);
     }
 
-    void save(Category category) {
+    public void save(Category category) {
         categoryRepository.save(category);
     }
 }

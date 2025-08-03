@@ -18,15 +18,15 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    Order findById(Long id) {
+    public Order findById(Long id) {
         return orderRepository.findById(id).orElse(null);
     }
 
-    List<Order> findByAccountUsername(String username) {
+    public List<Order> findByAccountUsername(String username) {
         return orderRepository.findByAccountUsername(username);
     }
 
-    void updateById(Long id, Order order) {
+    public void updateById(Long id, Order order) {
         Order existingOrder = findById(id);
         if (existingOrder != null) {
             existingOrder.setCreatedDate(order.getCreatedDate());
@@ -36,11 +36,11 @@ public class OrderService {
         }
     }
 
-    void deleteById(Long id) {
+    public void deleteById(Long id) {
         orderRepository.deleteById(id);
     }
 
-    void save(Order order) {
+    public void save(Order order) {
         orderRepository.save(order);
     }
 }

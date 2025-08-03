@@ -19,23 +19,23 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
-    Account findByUsername(String username) {
+    public Account findByUsername(String username) {
         return accountRepository.findByUsername(username);
     }
 
-    Account findByEmail(String email) {
+    public Account findByEmail(String email) {
         return accountRepository.findByEmail(email);
     }
 
-    void deleteByUsername(String username) {
+    public void deleteByUsername(String username) {
         accountRepository.deleteByUsername(username);
     }
 
-    void deleteByEmail(String email) {
+    public void deleteByEmail(String email) {
         accountRepository.deleteByEmail(email);
     }
 
-    void save(Account account) {
+    public void save(Account account) {
         accountRepository.save(account);
     }
 }
