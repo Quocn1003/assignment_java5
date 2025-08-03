@@ -9,4 +9,10 @@ import poly.java5.asm.entity.Order;
 public interface OrderRepository extends JpaRepository<Order, Long> {
     // Additional query methods can be defined here if needed
     List<Order> findByAccountUsername(String username);
+
+    Double getTotalRevenue();
+
+    List<Object> getRevenueByCategory();
+
+    List<Object[]> getTopCustomers();
 }
