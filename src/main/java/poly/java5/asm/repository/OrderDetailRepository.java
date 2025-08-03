@@ -1,7 +1,6 @@
 package poly.java5.asm.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import poly.java5.asm.entity.OrderDetail;
 
