@@ -11,6 +11,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     // Additional query methods can be defined here if needed
     List<Order> findByAccountUsername(String username);
 
+    @Query("SELECT SUM(od.price * od.quantity) FROM Order o JOIN o.orderDetails od")
     Double getTotalRevenue();
 
     @Query("SELECT new poly.java5.asm.dto.RevenueReport(od.product.category.name, SUM(od.price * od.quantity)) " +
